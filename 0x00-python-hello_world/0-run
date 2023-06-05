@@ -1,6 +1,2 @@
 #!/bin/bash
-
-fileName = "$PYFILE"
-
-python "$fileName"
-
+python "$PYFILE"
