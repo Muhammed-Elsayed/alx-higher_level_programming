@@ -1,0 +1,6 @@
+#!/bin/bash
+
+fileName = "$PYFILE"
+
+python "$fileName"
+
