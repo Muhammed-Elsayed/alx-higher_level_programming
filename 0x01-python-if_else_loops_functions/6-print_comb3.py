@@ -5,4 +5,4 @@ for first in range(0, 10):
         if (first == 8 and second == 9):
             print("89")
             continue
-        print(f"{first}{second}", end=", ")
+        print("{}{}".format(first, second), end=", ")
