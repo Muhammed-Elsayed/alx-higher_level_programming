@@ -4,7 +4,6 @@
 
 def matrix_divided(matrix, div):
     """function """
-    
     if (not isinstance(matrix, list) or matrix == [] or
             not all(isinstance(row, list) for row in matrix) or
             not all((isinstance(ele, int) or isinstance(ele, float))
