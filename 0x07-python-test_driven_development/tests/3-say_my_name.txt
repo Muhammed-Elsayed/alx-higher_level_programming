@@ -42,3 +42,18 @@ Usage
         Traceback (most recent call last):
             ...
         TypeError: last_name must be a string
+
+>>> say_my_name("Bob", "Smith")
+        My name is Bob Smith
+
+>>> say_my_name("Tom")
+        My name is Tom
+
+>>> say_my_name(" ")
+        My name is
+
+>>> say_my_name("", "Jones")
+        My name is Jones
+
+>>> say_my_name("Peter", "Parker")
+        My name is Peter Parker
