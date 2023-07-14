@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""documentaion"""
+"""textfile for writing files"""
 
 
 def write_file(filename="", text=""):

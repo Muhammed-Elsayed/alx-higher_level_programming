@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""documentaion"""
+"""textfile for reading files"""
 
 
 def read_file(filename=""):
