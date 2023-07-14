@@ -2,9 +2,6 @@
 """documentaion"""
 
 
-import os
-
-
 def read_file(filename=""):
     """reading an entire file and printing its content"""
     with open(filename, "r", encoding='utf-8') as myfile:
