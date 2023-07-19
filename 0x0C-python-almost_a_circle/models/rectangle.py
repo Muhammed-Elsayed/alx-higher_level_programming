@@ -21,6 +21,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
+        """sets the value of the width"""
         if type(value) != int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -29,10 +30,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """gets the height"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """sets the height"""
         if type(value) != int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -46,6 +49,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        """sets the x coordinate"""
         if type(value) != int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -59,6 +63,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        """sets the y coordinates"""
         if type(value) != int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -66,6 +71,7 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """calculate the area and return it"""
         return (self.__height * self.__width)
 
     def display(self):
