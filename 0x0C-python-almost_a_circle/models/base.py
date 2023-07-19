@@ -29,11 +29,13 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """saving a json format to a file after converting the object"""
-        if list_objs == None or list_objs == []:
-            return []
 
         filename = cls.__name__ + ".json"
         jsondata = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
+
+        if list_objs == None or list_objs == []:
+            return []
+
 
         with open (filename, "w") as file:
             file.write(jsondata)
