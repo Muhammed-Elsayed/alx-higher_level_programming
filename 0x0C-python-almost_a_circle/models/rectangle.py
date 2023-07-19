@@ -88,7 +88,17 @@ class Rectangle(Base):
                 print(" " * self.x + "#" * self.width)
 
     def update(self, *args, **kwargs):
-        """updating the values of the attributes of  an object """
+        """Update the Rectangle.
+
+        Args:
+            *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents width attribute
+                - 3rd argument represent height attribute
+                - 4th argument represents x attribute
+                - 5th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
+        """
         if args:
             if len(args) >= 1:
                 self.id = args[0]
