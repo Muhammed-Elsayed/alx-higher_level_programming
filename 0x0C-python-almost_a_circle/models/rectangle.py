@@ -1,14 +1,26 @@
 #!/usr/bin/python3
 
-"""Defines a rectangle class"""
+"""Defines a Rectangle class"""
 
 from base import Base
 
 
 class Rectangle(Base):
-    """The rectangle class that inherets from the base class"""
+    """
+    The Rectangle class that inherits from the base class.
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        Initialize the Rectangle object.
+
+        Args:
+            width (int): The width of the Rectangle.
+            height (int): The height of the Rectangle.
+            x (int, optional): The x coordinate. Defaults to 0.
+            y (int, optional): The y coordinate. Defaults to 0.
+            id (int, optional): The unique identifier. Defaults to None.
+        """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -17,13 +29,22 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Set/get the width of the Rectangle."""
+        """Get the width of the Rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """sets the value of the width"""
-        if type(value) != int:
+        """
+        Set the width of the Rectangle.
+
+        Args:
+            value (int): The width value to set.
+
+        Raises:
+            TypeError: If the width is not an integer.
+            ValueError: If the width is less than or equal to 0.
+        """
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -31,13 +52,22 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """gets the height"""
+        """Get the height of the Rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """sets the height"""
-        if type(value) != int:
+        """
+        Set the height of the Rectangle.
+
+        Args:
+            value (int): The height value to set.
+
+        Raises:
+            TypeError: If the height is not an integer.
+            ValueError: If the height is less than or equal to 0.
+        """
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -45,13 +75,22 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Set/get the x coordinate of the Rectangle."""
+        """Get the x coordinate of the Rectangle."""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """sets the x coordinate"""
-        if type(value) != int:
+        """
+        Set the x coordinate of the Rectangle.
+
+        Args:
+            value (int): The x coordinate value to set.
+
+        Raises:
+            TypeError: If the x coordinate is not an integer.
+            ValueError: If the x coordinate is less than 0.
+        """
+        if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -59,24 +98,42 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Set/get the y coordinate of the Rectangle."""
+        """Get the y coordinate of the Rectangle."""
         return self.__y
 
     @y.setter
     def y(self, value):
-        """sets the y coordinates"""
-        if type(value) != int:
+        """
+        Set the y coordinate of the Rectangle.
+
+        Args:
+            value (int): The y coordinate value to set.
+
+        Raises:
+            TypeError: If the y coordinate is not an integer.
+            ValueError: If the y coordinate is less than 0.
+        """
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
 
     def area(self):
-        """calculate the area and return it"""
-        return (self.__height * self.__width)
+        """
+        Calculate the area of the Rectangle.
+
+        Returns:
+            int: The area of the Rectangle.
+        """
+        return self.__height * self.__width
 
     def display(self):
-        """Print the Rectangle using the `#` character."""
+        """
+        Print the Rectangle using the '#' character.
+
+        If the width or height is 0, it will print an empty line.
+        """
         if self.width == 0 or self.height == 0:
             print("")
             return
@@ -87,7 +144,13 @@ class Rectangle(Base):
                 print(" " * self.x + "#" * self.width)
 
     def __str__(self):
-        """Return the print() and str() representation of the Rectangle."""
+        """
+        Return the representation of the Rectangle.
+
+        Returns:
+            str: The string representation of the Rectangle in the format
+            "[Rectangle] (id) x/y - width/height".
+        """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
                                                        self.width, self.height)
