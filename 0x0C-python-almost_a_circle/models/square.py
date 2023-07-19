@@ -20,8 +20,8 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """Set the size of the square."""
-        self.__width = value
-        self.__height = value
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """Return a string representation of the square."""
