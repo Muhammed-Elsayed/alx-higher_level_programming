@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """Rectangle module"""
 
 from rectangle import Rectangle
@@ -40,4 +41,5 @@ class Square(Rectangle):
                     setattr(self, key, value)
 
     def to_dictionary(self):
+        """converting an object to a dictionary"""
         return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
