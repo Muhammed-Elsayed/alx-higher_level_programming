@@ -25,6 +25,23 @@ class Square(Rectangle):
     """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """
+        Initialize a new Square object.
+
+        This constructor is used to create a new Square object with the specified size, position,
+        and identifier. The width and height of the square are set to the provided size value, as a
+        square has equal dimensions.
+
+        Args:
+            size (int): The size of the square (equal width and height).
+            x (int, optional): The x-coordinate of the square's position (default 0).
+            y (int, optional): The y-coordinate of the square's position (default 0).
+            id (int, optional): The unique identifier for the square (default None).
+
+        Returns:
+            None
+
+        """
         super().__init__(size, size, x, y, id)
 
     @property
