@@ -4,8 +4,9 @@
 
 from rectangle import Rectangle
 
+
 class Square(Rectangle):
-    """Squaer class"""
+    """Square class that inherets from rectangle and rectangle inherets from base"""
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
@@ -22,7 +23,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """printing the object and class name and it's attributes"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}"\
+            .format(self.id, self.x, self.y, self.width)
 
     def update(self, *args, **kwargs):
         """Updating the attributes of an object"""
