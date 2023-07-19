@@ -171,7 +171,3 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
                                                        self.width, self.height)
-
-
-
-r1 = Rectangle(10, 10, 10, 1, 10)

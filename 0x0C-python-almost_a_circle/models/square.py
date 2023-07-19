@@ -1,33 +1,30 @@
 #!/usr/bin/python3
-
-"""Defines a Square class"""
+"""Rectangle module"""
 
 from rectangle import Rectangle
 
-
 class Square(Rectangle):
-    """a class square that inherets from rectangle class"""
-
+    """Squaer class"""
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
-
-        def __str__(self):
-            return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
-
     @property
     def size(self):
-        """size getter"""
+        """getter of the size property"""
         return self.width
 
     @size.setter
     def size(self, value):
-        """size setter"""
-        self.width = value
-        self.height = value
+        """setter of the size property"""
+        self.__width = value
+        self.__height = value
+
+    def __str__(self):
+        """printing the object and class name and it's attributes"""
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
 
     def update(self, *args, **kwargs):
-        """overloading the update method in the rectangle"""
+        """Updating the attributes of an object"""
         if args:
             if len(args) >= 1:
                 self.id = args[0]
@@ -42,10 +39,5 @@ class Square(Rectangle):
                 if hasattr(self, key):
                     setattr(self, key, value)
 
-
-
-
-
-
-
-print(Rectangle.x)
+    def to_dictionary(self):
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
