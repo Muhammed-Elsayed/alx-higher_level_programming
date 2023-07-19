@@ -55,7 +55,8 @@ class Square(Rectangle):
             str: The string representation of the square.
 
         """
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}"\
+            .format(self.id, self.x, self.y, self.width)
 
     def update(self, *args, **kwargs):
         """Update the attributes of the square.
