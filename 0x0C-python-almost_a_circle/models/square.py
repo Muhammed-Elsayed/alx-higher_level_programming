@@ -7,7 +7,7 @@ A Square is a special type of rectangle with equal width and height.
 
 """
 
-from rectangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
