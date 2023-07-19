@@ -2,14 +2,13 @@
 
 """Defines a Rectangle class"""
 
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
     """
     The Rectangle class that inherits from the base class.
     """
-
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Initialize the Rectangle object.
@@ -172,3 +171,7 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
                                                        self.width, self.height)
+
+
+
+r1 = Rectangle(10, 10, 10, 1, 10)
