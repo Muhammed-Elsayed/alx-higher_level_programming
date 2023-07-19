@@ -24,18 +24,17 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
-    
 
     @classmethod
     def save_to_file(cls, list_objs):
         """saving a json format to a file after converting the object"""
 
         filename = cls.__name__ + ".json"
-        jsondata = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
 
-        if list_objs == None or list_objs == []:
-            return []
-
-
-        with open (filename, "w") as file:
-            file.write(jsondata)
+        with open(filename, "w") as file:
+            if list_objs is None:
+                file.write("[]")
+            else:
+                obj_dicts = [obj.to_dictionary() for obj in list_objs]
+                json_data = cls.to_json_string(obj_dicts)
+                file.write(json_data)
