@@ -1,7 +1,2 @@
 #!/usr/bin/node
-const numArgs = process.argv.length - 2;
-if (numArgs >= 1) {
-  console.log(process.argv[2]);
-} else {
-  console.log('No argument');
-}
+console.log(typeof process.argv[2] === 'undefined' ? 'No argument' : process.argv[2]);
