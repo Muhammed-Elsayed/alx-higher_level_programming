@@ -2,7 +2,7 @@
 
 const Rectangle = require('./4-rectangle.js');
 
-let Square = class Square extends Rectangle {
+const Square = class Square extends Rectangle {
   constructor (size) {
     super(size, size);
   }
