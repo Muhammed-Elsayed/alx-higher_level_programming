@@ -11,8 +11,9 @@ if __name__ == '__main__':
                          db=sys.argv[3], port=3306)
 
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name = %s"
-    cur.execute(query, (sys.argv[4],))
+
+    query = "SELECT * FROM states WHERE name = '{}'".format(sys.argv[4])
+    cur.execute(query)
 
     results = cur.fetchall()
 
