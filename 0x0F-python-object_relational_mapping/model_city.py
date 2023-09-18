@@ -15,8 +15,8 @@ class City(Base):
     """
     The City class (super class for other classes)
     """
-    __tablename__ = "states"
+    __tablename__ = "cities"
     id = Column(Integer, primary_key=True,
                 unique=True, autoincrement=True, nullable=False)
-    name = Column("name", String(128), nullable=False)
+    name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
