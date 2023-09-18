@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-sql query for city and state
+Prints all City objects from
 """
-from sys import argv
+import sys
 from model_state import Base, State
 from model_city import City
 from sqlalchemy import create_engine
@@ -10,14 +10,13 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == '__main__':
-    engine = create_engine(f'mysql+mysqldb://{argv[1]}:{argv[2]}\
-                           @localhost:3306/{argv[3]}')
-
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
+                           format(sys.argv[1], sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    si_city = session.query(State, City).\
-        filter(City.state_id == State.id).all()
+    st_cty = session.query(State, City).filter(State.id == City.state_id).all()
 
-    for state, city in si_city:
+    for state, city in st_cty:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
